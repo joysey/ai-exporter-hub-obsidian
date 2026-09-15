@@ -184,7 +184,7 @@ AI Knowledge/Knowledge/   # 產生的知識筆記
 
 - 需要 Obsidian 1.7.2 或更新版本。
 - 執行時只使用標準 Obsidian API 和瀏覽器 API，不使用 Node.js 或 Electron API。
-- 宣告支援桌面版和行動版。儀表板會適應窄螢幕版面，但測試期間仍歡迎更多行動裝置回饋。
+- 此版本僅支援桌面版，暫不支援行動版版面。
 - 不依賴 Dataview、特定主題或外部帳號。
 
 ## 效能

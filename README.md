@@ -182,7 +182,7 @@ Both folders can be changed in the plugin settings.
 
 - Requires Obsidian 1.7.2 or later.
 - Uses standard Obsidian and browser APIs; no Node.js or Electron API is used at runtime.
-- Declared for both desktop and mobile. The dashboard adapts to narrow layouts, but broader mobile testing is still welcome during the beta.
+- Desktop only. Mobile layouts are not supported in this release.
 - Does not require Dataview, a specific theme, or an external account.
 
 ## Performance

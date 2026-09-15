@@ -1,6 +1,6 @@
 {
   "name": "ai-exporter-hub",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Organize and search exported AI conversations as local Markdown files in Obsidian.",
   "main": "main.js",
   "type": "module",

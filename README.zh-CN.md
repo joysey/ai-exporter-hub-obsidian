@@ -184,7 +184,7 @@ AI Knowledge/Knowledge/   # 生成的知识笔记
 
 - 需要 Obsidian 1.7.2 或更高版本。
 - 运行时只使用标准 Obsidian API 和浏览器 API，不使用 Node.js 或 Electron API。
-- 声明支持桌面端和移动端。仪表盘会适应窄屏布局，但测试阶段仍欢迎更多移动端反馈。
+- 本版本仅支持桌面端，暂不支持移动端布局。
 - 不依赖 Dataview、特定主题或外部账户。
 
 ## 性能
