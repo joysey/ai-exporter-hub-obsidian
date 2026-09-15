@@ -114,7 +114,7 @@ describe("findRecentlyReviewed", () => {
 });
 
 describe("countReviewedToday", () => {
-  const now = Date.now();
+  const now = new Date(2026, 0, 15, 12, 0, 0).getTime();
   const todayStart = new Date(now);
   todayStart.setHours(0, 0, 0, 0);
 

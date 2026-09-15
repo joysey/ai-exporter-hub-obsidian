@@ -1,9 +1,9 @@
 {
   "id": "ai-exporter-hub",
   "name": "AI Exporter Hub",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "minAppVersion": "1.7.2",
-  "description": "Organize and search exported AI conversations as local Markdown files in your Obsidian vault.",
+  "description": "Organize and search exported AI conversations as local Markdown files in your vault.",
   "author": "AIExportHub",
   "authorUrl": "https://github.com/joysey",
   "isDesktopOnly": true
