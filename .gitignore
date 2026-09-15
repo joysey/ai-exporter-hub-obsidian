@@ -1,0 +1,15 @@
+node_modules/
+main.js
+*.js.map
+.DS_Store
+test-vault/
+coverage/
+docs/ignore/
+.claude/
+.zcode/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+!package-lock.json
+test/

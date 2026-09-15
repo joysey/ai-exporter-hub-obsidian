@@ -1,0 +1,60 @@
+{
+  "name": "ai-exporter-hub",
+  "version": "0.1.0",
+  "description": "Organize and search exported AI conversations as local Markdown files in Obsidian.",
+  "main": "main.js",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc --noEmit --skipLibCheck && node esbuild.config.mjs production",
+    "typecheck": "tsc --noEmit --skipLibCheck",
+    "test": "vitest run --config vitest.config.ts",
+    "lint": "eslint . --max-warnings=0",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run build"
+  },
+  "keywords": [
+    "obsidian",
+    "ai",
+    "chatgpt",
+    "claude",
+    "knowledge-management",
+    "second-brain"
+  ],
+  "author": "AIExportHub",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joysey/ai-exporter-hub-obsidian.git"
+  },
+  "homepage": "https://github.com/joysey/ai-exporter-hub-obsidian#readme",
+  "bugs": {
+    "url": "https://github.com/joysey/ai-exporter-hub-obsidian/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@eslint/js": "^9.39.4",
+    "@eslint/json": "0.14.0",
+    "builtin-modules": "^3.3.0",
+    "esbuild": "^0.28.2",
+    "eslint": "^9.39.4",
+    "eslint-plugin-obsidianmd": "^0.4.2",
+    "globals": "^17.6.0",
+    "jiti": "^2.6.1",
+    "obsidian": "latest",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.0",
+    "typescript-eslint": "^8.70.0",
+    "vitest": "^4.1.11"
+  },
+  "dependencies": {
+    "minisearch": "^6.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
