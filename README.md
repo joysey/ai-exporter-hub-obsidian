@@ -51,6 +51,7 @@ AI Exporter Hub treats your vault as the database:
 - No background network service is used.
 - No proprietary storage format is introduced.
 - Uninstalling the plugin does not remove or alter your notes.
+- The clipboard is never read. Message text is written only when you click **Copy**.
 
 The plugin keeps only a disposable in-memory search index. When you edit organizational fields, it writes them to the note's YAML frontmatter through Obsidian's file APIs.
 
@@ -187,7 +188,7 @@ Both folders can be changed in the plugin settings.
 
 ## Performance
 
-Startup indexing reads frontmatter from Obsidian's metadata cache rather than loading every conversation body. Full-text body indexing is optional, runs lazily in batches, and has a configurable file limit. This keeps the initial dashboard responsive while still supporting large archives.
+Startup indexing is limited to the configured conversation folder and reads frontmatter from Obsidian's metadata cache rather than loading every conversation body. Full-text body indexing is optional, runs lazily in batches, and has a configurable file limit. This keeps the initial dashboard responsive while still supporting large archives.
 
 If you report a performance issue, include the approximate conversation count, Obsidian version, operating system, and plugin version. Do not attach private conversation content unless it is necessary and safe to share.
 

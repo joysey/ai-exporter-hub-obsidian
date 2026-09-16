@@ -1,7 +1,7 @@
 /* ===== AI Exporter Hub styles ===== */
 
-.aikh-root {
-  padding: 0 !important;
+.aikh-root.aikh-root {
+  padding: 0;
   overflow: hidden;
 }
 

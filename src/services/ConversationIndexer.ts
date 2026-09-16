@@ -1,4 +1,4 @@
-import { App, TAbstractFile, TFile, debounce } from "obsidian";
+import { App, TAbstractFile, TFile, TFolder, debounce, normalizePath } from "obsidian";
 import { ConversationIndexItem } from "../models/conversation";
 import { isInsideFolder } from "../utils/paths";
 import { isConversation, mapToIndexItem } from "./mapping";
@@ -78,10 +78,7 @@ export class ConversationIndexer {
   async build(): Promise<void> {
     this.status = "building";
     this.items.clear();
-    const rootFolder = this.getRootFolder();
-    const files = this.app.vault
-      .getMarkdownFiles()
-      .filter((f) => isInsideFolder(f.path, rootFolder));
+    const files = this.getMarkdownFilesInRoot();
 
     this.progress = { status: "building", processed: 0, total: files.length };
     this.notify();
@@ -105,6 +102,23 @@ export class ConversationIndexer {
     this.status = "ready";
     this.progress = { status: "ready", processed: files.length, total: files.length };
     this.notify();
+  }
+
+  /** Enumerate only the configured conversation folder, not the entire vault. */
+  private getMarkdownFilesInRoot(): TFile[] {
+    const rootPath = normalizePath(this.getRootFolder());
+    const root = this.app.vault.getAbstractFileByPath(rootPath);
+    if (!(root instanceof TFolder)) return [];
+
+    const files: TFile[] = [];
+    const visit = (folder: TFolder): void => {
+      for (const child of folder.children) {
+        if (child instanceof TFolder) visit(child);
+        else if (child instanceof TFile && child.extension === "md") files.push(child);
+      }
+    };
+    visit(root);
+    return files;
   }
 
   private indexFile(file: TFile, notify = true): boolean {

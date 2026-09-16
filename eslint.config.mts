@@ -56,7 +56,6 @@ export default defineConfig(
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
-      "obsidianmd/settings-tab/prefer-setting-definitions": "off",
       "obsidianmd/ui/sentence-case": [
         "warn",
         {
