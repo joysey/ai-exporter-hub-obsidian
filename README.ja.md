@@ -10,6 +10,10 @@ AI Exporter Hub は、ChatGPT、Claude、Gemini、Perplexity、Grok、Genspark�
   <a href="./README.md">English</a> · <a href="./README.zh-CN.md">简体中文</a> · <a href="./README.zh-TW.md">繁體中文</a> · <strong>日本語</strong>
 </p>
 
+<p align="center">
+  <a href="https://community.obsidian.md/plugins/ai-exporter-hub"><strong>Obsidian コミュニティディレクトリで AI Exporter Hub を表示</strong></a>
+</p>
+
 ## AI Exporter Hub を使う理由
 
 調査資料、コード、文章、意思決定、プロジェクトの知識は、複数の AI サービスに分散しつつあります。AI Exporter Hub はエクスポートした会話を 1 つのローカルライブラリにまとめ、元のチャットが終了した後も活用できるようにします。
@@ -114,7 +118,7 @@ AI Exporter Hub は旧形式のエクスポートにも対応しています。�
 
 ### Obsidian コミュニティプラグイン
 
-公式ディレクトリで承認された後は、次の手順でインストールできます。
+AI Exporter Hub は [Obsidian コミュニティディレクトリ](https://community.obsidian.md/plugins/ai-exporter-hub)からインストールできます。
 
 1. Obsidian で **設定 → コミュニティプラグイン** を開きます。
 2. **閲覧** を選択します。

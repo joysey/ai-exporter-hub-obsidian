@@ -10,6 +10,10 @@ AI Exporter Hub 可以集中管理来自 ChatGPT、Claude、Gemini、Perplexity�
   <a href="./README.md">English</a> · <strong>简体中文</strong> · <a href="./README.zh-TW.md">繁體中文</a> · <a href="./README.ja.md">日本語</a>
 </p>
 
+<p align="center">
+  <a href="https://community.obsidian.md/plugins/ai-exporter-hub"><strong>在 Obsidian 社区插件目录中查看 AI Exporter Hub</strong></a>
+</p>
+
 ## 为什么选择 AI Exporter Hub？
 
 研究资料、代码、写作内容、决策记录和项目知识正分散在不同的 AI 服务中。AI Exporter Hub 将导出的对话汇集到一个本地资料库中，让这些内容在原始聊天结束后依然能够持续发挥价值。
@@ -114,7 +118,7 @@ AI Exporter Hub 也能识别旧版导出文件：frontmatter 中需要同时包�
 
 ### Obsidian 社区插件
 
-插件通过官方目录审核后：
+AI Exporter Hub 已在 [Obsidian 社区插件目录](https://community.obsidian.md/plugins/ai-exporter-hub)上架：
 
 1. 在 Obsidian 中打开 **设置 → 第三方插件**。
 2. 选择 **浏览**。

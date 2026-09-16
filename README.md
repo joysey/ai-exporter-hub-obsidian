@@ -10,6 +10,10 @@ AI Exporter Hub organizes conversations from ChatGPT, Claude, Gemini, Perplexity
   <strong>English</strong> · <a href="./README.zh-CN.md">简体中文</a> · <a href="./README.zh-TW.md">繁體中文</a> · <a href="./README.ja.md">日本語</a>
 </p>
 
+<p align="center">
+  <a href="https://community.obsidian.md/plugins/ai-exporter-hub"><strong>View AI Exporter Hub in the Obsidian Community directory</strong></a>
+</p>
+
 ## Why AI Exporter Hub?
 
 Research, code, writing, decisions, and project knowledge are increasingly scattered across separate AI services. AI Exporter Hub brings exported conversations together in one local library so they can remain useful after the original chat is over.
@@ -114,7 +118,7 @@ The plugin does not scrape or download conversations from AI websites. You can c
 
 ### Obsidian Community plugins
 
-After the plugin is accepted into the official directory:
+AI Exporter Hub is available in the [Obsidian Community directory](https://community.obsidian.md/plugins/ai-exporter-hub):
 
 1. Open **Settings → Community plugins** in Obsidian.
 2. Select **Browse**.
