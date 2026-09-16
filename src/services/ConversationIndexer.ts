@@ -104,11 +104,12 @@ export class ConversationIndexer {
     this.notify();
   }
 
-  /** Enumerate only the configured conversation folder, not the entire vault. */
+  /** Enumerate the configured folder, or fall back to the vault root if it is missing. */
   private getMarkdownFilesInRoot(): TFile[] {
     const rootPath = normalizePath(this.getRootFolder());
-    const root = this.app.vault.getAbstractFileByPath(rootPath);
-    if (!(root instanceof TFolder)) return [];
+    const configuredRoot = this.app.vault.getAbstractFileByPath(rootPath);
+    const scanRoot =
+      configuredRoot instanceof TFolder ? configuredRoot : this.app.vault.getRoot();
 
     const files: TFile[] = [];
     const visit = (folder: TFolder): void => {
@@ -117,8 +118,17 @@ export class ConversationIndexer {
         else if (child instanceof TFile && child.extension === "md") files.push(child);
       }
     };
-    visit(root);
+    visit(scanRoot);
     return files;
+  }
+
+  /** Follow the same folder-or-vault fallback used by full index builds. */
+  private isInScanScope(path: string): boolean {
+    const rootPath = normalizePath(this.getRootFolder());
+    const configuredRoot = this.app.vault.getAbstractFileByPath(rootPath);
+    return configuredRoot instanceof TFolder
+      ? isInsideFolder(path, configuredRoot.path)
+      : true;
   }
 
   private indexFile(file: TFile, notify = true): boolean {
@@ -136,13 +146,13 @@ export class ConversationIndexer {
 
   handleCreate(file: TAbstractFile) {
     if (!(file instanceof TFile) || file.extension !== "md") return;
-    if (!isInsideFolder(file.path, this.getRootFolder())) return;
+    if (!this.isInScanScope(file.path)) return;
     this.indexFile(file);
   }
 
   handleModify(file: TAbstractFile) {
     if (!(file instanceof TFile) || file.extension !== "md") return;
-    if (!isInsideFolder(file.path, this.getRootFolder())) return;
+    if (!this.isInScanScope(file.path)) return;
     this.indexFile(file);
   }
 
@@ -153,7 +163,7 @@ export class ConversationIndexer {
   handleRename(file: TAbstractFile, oldPath: string) {
     this.items.delete(oldPath);
     if (file instanceof TFile && file.extension === "md") {
-      if (isInsideFolder(file.path, this.getRootFolder())) {
+      if (this.isInScanScope(file.path)) {
         this.indexFile(file);
         return;
       }

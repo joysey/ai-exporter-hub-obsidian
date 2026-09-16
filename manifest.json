@@ -1,7 +1,7 @@
 {
   "id": "ai-exporter-hub",
   "name": "AI Exporter Hub",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "minAppVersion": "1.7.2",
   "description": "Organize and search exported AI conversations as local Markdown files in your vault.",
   "author": "AIExportHub",

@@ -12,7 +12,7 @@ export class AIExporterHubSettingTab extends PluginSettingTab {
     return [
       {
         name: "AI conversation folder",
-        desc: "Folder scanned for AI conversation Markdown files.",
+        desc: "Folder scanned for AI conversation Markdown files. If it does not exist, the entire vault is scanned.",
         control: {
           type: "folder",
           key: "rootFolder",
@@ -236,7 +236,9 @@ export class AIExporterHubSettingTab extends PluginSettingTab {
 
     new Setting(containerEl)
       .setName("AI conversation folder")
-      .setDesc("Folder scanned for AI conversation Markdown files.")
+      .setDesc(
+        "Folder scanned for AI conversation Markdown files. If it does not exist, the entire vault is scanned."
+      )
       .addText((t) =>
         t
           .setPlaceholder("AI Knowledge")
